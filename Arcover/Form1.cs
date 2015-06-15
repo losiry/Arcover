@@ -82,16 +82,16 @@ namespace Arcover
 
                 if (bruteMode == Mode.Dictionary)
                 {
-                    DictionaryBrute.Run(textBoxDictionaryPath.Text, 10);
+                    DictionaryBrute br = new DictionaryBrute(textBoxDictionaryPath.Text);                    
+                    br.Run(10);
                 }
 
                 else if (bruteMode == Mode.Force)
                 {
-                    ForceBrute.SetAlphabet(checkedListBoxBruteMode.CheckedItems); 
-                    ForceBrute.Run();
+                    ForceBrute br = new ForceBrute();
+                    br.SetAlphabet(checkedListBoxBruteMode.CheckedItems); 
+                    br.Run(10);
                 }
-
-                listViewLogger.Items.Add(ForceBrute.GetAlphabet());
 
                 startButton.Text = (startButton.Text == "Start") ? "Stop" : "Start";
             }
@@ -112,6 +112,8 @@ namespace Arcover
         private void AddOutputMessage(string message)
         {
             listViewLogger.Items.Add(message);
+            // Scroll to bottom after updating
+            listViewLogger.Items[listViewLogger.Items.Count - 1].EnsureVisible();
         }
     }
 

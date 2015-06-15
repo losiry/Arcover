@@ -1,0 +1,10 @@
+[-] Fix bugs with incorrect pass finding sometimes.
+[-] Fix bugs with incorrect input files.
+
+[-] Improve output ListViewLogger control
+[-] Inherit new class from ListView and set funtion to remove old notifications
+
+[-] Add Bruteforce Mode.
+[-] Fix empty alphabet problem
+
+[-] Rewrite Run functions with 7z.dll instead of creating new procceses.
